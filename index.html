@@ -1,0 +1,129 @@
+
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ポートフォリオ</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+
+    <header id="header">
+
+        <a href="" class="logo">Site Name</a>
+    
+        <div class="mask" id="mask"></div>
+    
+        <!-- ハンバーガーメニュー -->
+        <a class="menuButton" id="menuButton">
+            <div></div>
+            <div></div>
+            <div></div>
+        </a>
+    
+        <nav id="nav">
+            <ul>
+                <li><a class="modalOpen" id="modalOpen">マップ</a></li>
+                <li><a class="modalOpen2" id="modalOpen2">お問い合わせ</a></li>
+                <li><a class="modalOpen3" id="modalOpen3">スキル情報</a></li>
+            </ul>
+        </nav>
+
+        <div class="modal" id="modal">
+            <h2>マップ</h2>
+            <div class="modalContents">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3329.2397803726126!2d129.81425708800867!3d33.44305896868198!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x356a630eb2b024a1%3A0xcdf5355cbb29273a!2z5bqD5aC0!5e0!3m2!1sja!2sjp!4v1626164234286!5m2!1sja!2sjp"
+                 class="map" style="border:0;" allowfullscreen="" loading="lazy">
+                </iframe>
+            </div>
+            <a href="" id="modalClose" calss="modalClose">閉じる</a>
+        </div>
+
+        <div class="modal2" id="modal2">
+            <h2>お問い合わせ</h2>
+            <div class="modalContents">
+                <form action="#" method="post" name="form">
+                    <div class="form" id="form">
+                    お名前：<input type="text" name="name" placeholder="フルネームで記入" value=""><br>
+                    メールアドレス：<input type="email" name="email" placeholder="メールアドレス"><br>
+                    <span>〜お問い合わせ内容〜</span><br>
+                    <textarea type="text" name="content" rows="4" cols="40" placeholder="内容"></textarea><br>
+                    </div>
+                <div class="submit" id="submit">
+                    <input type="submit" value="送信">
+                </div>
+                </form>
+            </div>
+            <a href="" id="modalClose2" calss="modalClose2">閉じる</a>
+        </div>
+
+        <div class="modal3" id="modal3">
+            <h2>スキル情報</h2>
+            <div class="modalContents">
+                <p>HTML5とCSS3の基礎を勉強した後、<br>
+                   PHP、SQLを勉強しましたが、フロント<br>
+                   エンドエンジニアの方に興味を持ち、<br>
+                   JavaScriptの基礎を勉強中です。</p>
+            </div>
+            <a href="" id="modalClose3" calss="modalClose3">閉じる</a>
+        </div>
+
+        <div class="modalMask" id="modalMask"></div>     
+      </header>
+
+  <main>
+    <div class="hero" id="hero"></div>
+    <section>
+
+      <div class="animation-target" id="animation-target">
+            <p>Self<br>
+            Introduction<br>
+            Portfolio</p>
+      </div>
+
+      <ul class="contents">
+        <li class="animationTarget">
+            <img src="img/S__105275398.jpg" alt="">
+            <div class="contentsText">
+                <h2>Birthplace</h2>
+                <p>佐賀県唐津市。<br>
+                唐津市には日本でも有名な呼子のイカや<br>
+                11月に開催される唐津くんちが魅力的です。</p>
+            </div>
+        </li>
+
+        <li class="animationTarget">
+            <img src="img/IMG_1830 2.jpg" alt="">
+            <div class="contentsText">
+                <h2>Hobby</h2>
+                <p>小学生低学年の頃から始めているサッカーを<br>
+                    今でも続けています。友人とフットサルチームを<br>
+                    作り、体に刺激を与えストレス発散してます。
+                </p>
+            </div>
+        </li>
+
+        <li class="animationTarget">
+            <img src="img/S__105275396.jpg" alt="">
+            <div class="contentsText">
+                <h2>About Myself</h2>
+                <p>私には継続する力があると思います。<br>
+                   趣味のサッカーもですが、プログラミンに興味を
+                   持ってから毎日勉強をしています。この長所を<br>
+                   活かして入社した際は、御社に貢献できるような<br>
+                   存在になりたいと考えています。
+                </p>
+            </div>
+        </li>
+    </ul>
+    </section>
+  </main>
+
+  <footer>
+    <small>© 2021 Company Name.</small>
+  </footer>
+</body>
+</html>
