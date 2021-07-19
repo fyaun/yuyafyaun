@@ -46,14 +46,38 @@
             <h2>お問い合わせ</h2>
             <div class="modalContents">
                 <form action="#" method="post" name="form">
-                    <div class="form" id="form">
-                    お名前：<input type="text" name="name" placeholder="フルネームで記入" value=""><br>
-                    メールアドレス：<input type="email" name="email" placeholder="メールアドレス"><br>
-                    <span>〜お問い合わせ内容〜</span><br>
-                    <textarea type="text" name="content" rows="4" cols="40" placeholder="内容"></textarea><br>
-                    </div>
+                    <table>
+                        <tbody>
+                            <!-- お名前 -->
+                            <tr>
+                                <th></th>
+                                <td><div class="err-msg-name"></div></td>
+                            </tr>
+                            <tr>
+                                <th><label for="name">お名前：</label></th>
+                                <td><input type="text" name="name" id="name" placeholder="お名前を入力"></td>
+                            </tr>
+                            <tr>
+                                <th></th>
+                                <td><div class="err-msg-email"></div></td>
+                            </tr>
+                            <tr>
+                                <th><label for="email">メールアドレス：</label></th>
+                                <td><input type="email" name="email" id="email" placeholder="メールアドレスを入力"></td>
+                            </tr>
+                            <tr>
+                                <th></th>
+                                <td><div class="err-msg-content"></div></td>
+                            </tr>
+                            <tr>
+                                <th><label for="content">お問い合わせ内容：</label></th>
+                                <td><textarea type="text" name="content" id="content" rows="4" cols="40" placeholder="内容"></textarea></td>
+                            </tr>
+                        </tbody>
+                    </table>
+
                 <div class="submit" id="submit">
-                    <input type="submit" value="送信">
+                    <input type="submit" name="btnsubmit" value="送信"></button>
                 </div>
                 </form>
             </div>
