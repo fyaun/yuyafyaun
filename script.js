@@ -1,3 +1,4 @@
+
 window.addEventListener('scroll', function () {
     const scrollY = window.pageYOffset;
 
@@ -7,7 +8,8 @@ window.addEventListener('scroll', function () {
         document.getElementById('header').classList.remove('active');   
     }
 
-
+    // querySelectorはcssのセレクタの指定・ALLはセレクタの要素全てを指定
+    // liをALLで指定したら全てのli要素を指定することになる
     const targetElement = document.querySelectorAll(".animationTarget");
     const showElements = document.querySelectorAll(".animation-target");
     
@@ -37,8 +39,8 @@ window.addEventListener('scroll', function () {
 
 });
 
-    // htmlの内容を全て読み込んだら何かしらの機能を実行すると言う意味
-    document.addEventListener('DOMContentLoaded', function() {
+// htmlの内容を全て読み込んだら何かしらの機能を実行すると言う意味
+window.addEventListener('DOMContentLoaded', function() {
     // htmlのmenuButtonからidを取得
     // addEventListenerでクリックしたら機能を実行する
     document.getElementById('menuButton').addEventListener('click', function() {
@@ -69,12 +71,109 @@ window.addEventListener('scroll', function () {
         document.getElementById("modalMask").classList.remove("active");
 
     })
+
+    //送信ボタンの要素を取得
+    const submit = document.querySelector('.submit');
+
+    //送信ボタンの要素にクリックイベントを設定する
+    //eはeventの略
+    //preventDefault()はデフォルトアクションをキャンセルするメソッド
+    //上記を書かなかった場合バリデーションを行う前に指定したURLに送信されてしまう！
+    submit.addEventListener('click', (e) =>{
+        //デフォルトアクションをキャンセル
+        e.preventDefault();
+
+        //名前の入力チェック
+        // フォームの要素を取得
+        const name = document.querySelector('#name');
+        // エラーメッセージを表示させる要素を取得
+        const errMsgName = document.querySelector('.err-msg-name');
+
+        if (!name.value) {
+            // クラスを追加(エラーメッセージを表示する)
+            errMsgName.classList.add('form-invalid');
+            // エラーメッセージのテキスト
+            errMsgName.textContent = 'お名前が入力されていません';
+            // クラスを追加(フォームの枠線を赤くする)
+            name.classList.add('input-invalid');
+            // 後続の処理を止める
+            return;
+        } else {
+            // エラーメッセージのテキストに空白文字を代入
+            errMsgName.textContent = '';
+            // クラスを削除
+            name.classList.remove('input-invalid');
+            //何もなければ送信する
+            
+        }
+
+        //メアドの入力チェック
+        //フォームの要素を取得
+        const email = document.querySelector('#email');
+        //エラーメッセージを表示させる要素を取得
+        const errMsgEmail = document.querySelector('.err-msg-email');
+
+        if (!email.value) {
+            //クラスを追加（エラーメッセージを表示する）
+            errMsgEmail.classList.add('form-invalid');
+            //エラーメッセージのテキスト
+            errMsgEmail.textContent = 'メールアドレスがありません';
+            // クラスを追加（フォームの枠線を赤くする）
+            email.classList.add('input-invalid');
+            // 後続の処理を止める
+            return;
+        } else if (!email.value.match(/.+@.+\..+/)){
+            //クラスを追加（エラーメッセージを表示する）
+            errMsgEmail.classList.add('form-invalid');
+            //エラーメッセージのテキスト
+            errMsgEmail.textContent = 'メールアドレスが正しくありません';
+            // クラスを追加（フォームの枠線を赤くする）
+            email.classList.add('input-invalid');
+            // 後続の処理を止める
+            return;
+        } else {
+            //エラーメッセージのテキスト
+            errMsgEmail.textContent = '';
+            //クラスを削除
+            email.classList.remove('input-invalid');
+        }
+
+        //　コメントの入力チェック
+        // フォームの要素を取得
+        const content = document.querySelector('#content');
+        // エラーメッセージを表示させる要素を取得
+        const errMsgContent = document.querySelector('.err-msg-content');
+
+        if (!content.value) {
+            //クラスを追加（エラーメッセージを表示する）
+            errMsgContent.classList.add('form-invalid');
+            //エラーメッセージのテキスト
+            errMsgContent.textContent = 'コメントされていません';
+            // クラスを追加（フォームの枠線を赤くする）
+            content.classList.add('input-invalid');
+            //後続の処理を止める
+            return;
+        } else if (content.value.length > 40) {
+            //クラスを追加（エラーメッセージを表示する）
+            errMsgContent.classList.add('form-invalid');
+            //エラーメッセージのテキスト
+            errMsgContent.textContent = '40文字以内でコメントしてください';
+            // クラスを追加（フォームの枠線を赤くする）
+            content.classList.add('input-invalid');
+            //後続の処理を止める
+            return;
+        } else {
+            // エラーメッセージのテキスト
+            errMsgContent.textContent = '';
+            //クラス削除
+            content.classList.remove('input-invalid');
+        }
+
+       alert('送信しました');
+
+    })
     
  });
-
-
-
-
 
 
 
