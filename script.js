@@ -175,5 +175,49 @@ window.addEventListener('DOMContentLoaded', function() {
     
  });
 
+const mySwiper = new Swiper('.swiper-container', {
+
+    // 画像の残像を消す方法
+    fadeEffect: {
+        crossFade: true
+    },
+
+
+    // Optional parameters
+     loop: true,
+    // スピード調整
+    speed: 2000,
+    // 一度に表示するスライド画像の枚数
+    slidesPerView: 1,
+    // 現在のスライドを真ん中に表示
+    centeredSlides: true,
+
+    // 2秒　オートに
+    autoplay: {
+        delay: 3000
+    },
+
+     // スワイパーレスポンシブ対応
+    breakpoints: {
+        769: {
+          slidesPerView: '3',
+        },
+      },
+
+  
+    // If we need pagination
+    pagination: {
+      el: '.swiper-pagination',
+    },
+    // Navigation arrows
+    navigation: {
+     nextEl: '.swiper-button-next',
+     prevEl: '.swiper-button-prev',
+    },
+
+  
+  });
+
+
 
 
