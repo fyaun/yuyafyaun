@@ -438,6 +438,7 @@ section {
 .slide-wrap {
   position: relative;
   margin-bottom: 200px;
+  z-index: 1;
 }
 
 .swiper-container {
